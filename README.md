@@ -8,7 +8,7 @@ A Unity 2022 project for authoring and rendering dashed lines on 3D colliders. C
 
 - Unity **2022.3.62f3** (the version saved in `ProjectSettings/ProjectVersion.txt`).
 - The built-in render pipeline, which this project currently uses.
-- No external assets are required for the public demo scenes.
+- The CC0 horse model used by one demo is included in the repository.
 
 Open this directory as a project in Unity Hub. Unity will import the assets and the embedded `com.coplaydev.unity-mcp` package on first launch.
 
@@ -17,10 +17,13 @@ Open this directory as a project in Unity Hub. Unity will import the assets and 
 | Scene | Purpose |
 | --- | --- |
 | `Assets/Scenes/SphereSurfaceLine.unity` | Main 3D line demo. Edit control points on the sphere, then click a dash in Play mode to hide it. |
+| `Assets/Scenes/HorseSurfaceLine.unity` | Complex-mesh demo using a CC0 horse statue. Its red dashes follow the visible surface; click a dash in Play mode to hide it. |
 | `Assets/Scenes/DashedPlanePainting.unity` | Separate texture painting demo. Drag the mouse on the plane; press **C** to clear it. |
 | `Assets/Scenes/SphereEquator.unity` | Earlier sphere and equator material example. |
 
-`SphereSurfaceLine` is the first enabled build scene. `SampleScene` is an unused Unity template.
+`SphereSurfaceLine` is the first enabled build scene; `HorseSurfaceLine` is also enabled. `SampleScene` is an unused Unity template.
+
+![Dashed line on the CC0 horse statue](Docs/images/horse-surface-line.png)
 
 ## Build
 
@@ -52,6 +55,6 @@ The project includes an embedded copy of [MCP for Unity](https://github.com/Copl
 
 ## Repository contents and rights
 
-Unity's generated `Library`, `Temp`, `Logs`, `UserSettings`, IDE files, and captures are ignored by Git. The local Stanford Dragon model and the scene that depends on it are also excluded. The public scenes remain self-contained.
+Unity's generated `Library`, `Temp`, `Logs`, `UserSettings`, IDE files, and captures are ignored by Git. The local Stanford Dragon model and the scene that depends on it are also excluded. The public complex-mesh scene uses the included CC0 [Horse Statue 01](https://polyhaven.com/a/horse_statue_01) by Rico Cilliers.
 
-The project-owned code and assets have **no public license yet**. The embedded MCP package keeps its separate MIT license. See [Third-party notices](Docs/THIRD_PARTY.md).
+The project-owned code and assets have **no public license yet**. The horse model and embedded MCP package keep their separate licenses. See [Third-party notices](Docs/THIRD_PARTY.md).

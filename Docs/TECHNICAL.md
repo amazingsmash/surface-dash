@@ -22,7 +22,7 @@ Visible and empty dash spans are determined by accumulated distance along the pr
 
 The mesh allocates `Dash Capacity × 4` vertices and `Dash Capacity × 2` triangles. Unused slots have zero alpha. The shader uses back-face culling; the included line materials render in the overlay queue with an always-pass depth test. This keeps the dashes visible above the model without adding more geometry to conform each dash to every surface triangle.
 
-The sample sphere material also enables a front-facing normal check. A line on the far side of a closed shape is therefore hidden even though the material draws above the model. The single-sided quads in the directional model use their fixed winding to disappear when viewed from behind.
+The sphere and horse demos use a front-facing normal check. A line on the far side of a closed shape is therefore hidden even though the material draws above the model. The single-sided quads in the directional model use their fixed winding to disappear when viewed from behind.
 
 `TryRemoveNearestDash` searches the visible dash center segments. Once it finds a dash within `Click Tolerance`, it writes transparent alpha to that dash's four vertex colors. It does not rebuild the mesh or replace its triangles. A full rebuild is needed only when the path or line settings change.
 

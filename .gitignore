@@ -32,8 +32,8 @@
 /TestResults/
 
 # Local-only Stanford Dragon demo and its model
-/Assets/Models/
-/Assets/Models.meta
+/Assets/Models/StanfordDragon/
+/Assets/Models/StanfordDragon.meta
 /Assets/Scenes/DragonSurfaceLine.unity
 /Assets/Scenes/DragonSurfaceLine.unity.meta
 /Assets/Materials/DragonClay.mat
