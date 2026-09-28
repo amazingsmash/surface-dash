@@ -5,6 +5,9 @@ public sealed class DashedLineClickRemover : MonoBehaviour
 {
     [SerializeField] private Collider surfaceCollider;
     [SerializeField] private DashedSurfaceLine line;
+    [SerializeField, Min(0f)]
+    [Tooltip("Maximum world-space distance from a surface click to a visible dash.")]
+    private float clickTolerance = 0.035f;
 
     private Camera drawingCamera;
 
@@ -30,7 +33,7 @@ public sealed class DashedLineClickRemover : MonoBehaviour
     {
         return surfaceCollider != null && line != null
             && surfaceCollider.Raycast(ray, out RaycastHit hit, 100f)
-            && line.TryRemoveNearestDash(hit.point);
+            && line.TryRemoveNearestDash(hit.point, clickTolerance);
     }
 
     private void OnGUI()

@@ -30,7 +30,7 @@ Unity may warn that the project is not linked to Unity Services. The scene does 
 4. Select a yellow point handle to move it in 3D. The green marker shows where that point projects onto the collider. A red warning means it is outside the projection range.
 5. Set **Projection Mode**, **Projection Direction**, and **Projection Distance** for the model. Use **Use Scene View Direction for Projection** when a directional projection should follow the current view.
 6. Set **Dash Length**, **Gap Length**, **Width**, and **Dash Capacity**. The inspector warns if the path needs more dashes than the reserved capacity.
-7. Enter Play mode. The line rebuilds from the saved control points; click close to a visible dash to hide it. **Click Tolerance** sets the maximum click distance in world units.
+7. Enter Play mode. The line rebuilds from the saved control points; click close to a visible dash to hide it. Set **Click Tolerance** on the **Dashed Line Click Remover** component of **Main Camera**. The value is a distance in world units.
 
 Points are serialized in the target collider's local coordinates. The editor can copy or paste one `x;y;z` point per line, or copy a C# `Vector3` array. Control points do not need equal spacing: dash placement uses distance accumulated along the sampled, projected path.
 
@@ -39,6 +39,16 @@ Points are serialized in the target collider's local coordinates. The editor can
 `DashedSurfaceLine` samples between control points, projects each sample with a collider raycast, and places dashes along the resulting 3D path. Its mesh reserves two triangles per dash. Removing a dash updates only four vertex alpha values; the index buffer and mesh capacity stay fixed. The shader culls back faces and renders the line above the target surface.
 
 See [Technical notes](Docs/TECHNICAL.md) for projection modes, rendering behavior, and limits.
+
+## Click interaction
+
+`DashedLineClickRemover` on **Main Camera** receives the mouse click and raycasts against the horse's collider. It calls the separate `DashedSurfaceLine` component with the hit position and the allowed distance:
+
+```csharp
+line.TryRemoveNearestDash(hit.point, clickTolerance);
+```
+
+`hit.point` is the collider hit position in world coordinates. `clickTolerance` is the maximum world-space distance from that position to a visible dash, configured on the click component. The method returns `true` if it hid a dash and `false` otherwise. The line component does not read mouse input. See [Technical notes](Docs/TECHNICAL.md#click-to-line-call) for the full call flow.
 
 ## MCP for Unity
 

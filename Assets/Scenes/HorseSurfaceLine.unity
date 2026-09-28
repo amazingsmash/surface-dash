@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surfaceCollider: {fileID: 1351211297}
   line: {fileID: 1685117782}
+  clickTolerance: 0.055
 --- !u!1 &692284221
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,10 +468,11 @@ MonoBehaviour:
   - {x: 0.00031889766, y: -0.00012728418, z: 0.0014368079}
   - {x: 0.00022715602, y: -0.0002048098, z: 0.0013745246}
   - {x: 0.000086726, y: -0.00014207864, z: 0.0012880209}
-  - {x: -0.00002041147, y: -0.00016849638, z: 0.001193759}
-  - {x: -0.00021665625, y: -0.00018234158, z: 0.0011283342}
+  - {x: -0.000048647988, y: -0.00016849638, z: 0.0011749383}
+  - {x: -0.000162592, y: -0.00018234158, z: 0.001047322}
   - {x: -0.00032771387, y: -0.000202652, z: 0.0009817077}
   - {x: -0.0003866286, y: -0.00023838849, z: 0.000832835}
+  - {x: -0.00019082059, y: -0.00029298826, z: 0.00073395664}
   closedLoop: 0
   width: 0.035
   dashLength: 0.09
@@ -479,7 +481,6 @@ MonoBehaviour:
   surfaceOffset: 0.001
   dashCapacity: 24
   color: {r: 1, g: 0, b: 0, a: 1}
-  clickTolerance: 0.055
   projectionMode: 0
   projectionDirection: {x: -0.55131793, y: -0.11026357, z: -0.82697695}
   projectionDistance: 2

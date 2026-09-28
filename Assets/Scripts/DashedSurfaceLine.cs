@@ -29,11 +29,6 @@ public sealed class DashedSurfaceLine : MonoBehaviour
     private int dashCapacity = 32;
     [SerializeField] private Color color = Color.red;
 
-    [Header("Interaction")]
-    [SerializeField, Min(0f)]
-    [Tooltip("Maximum world-space distance from a click to the center of a visible dash.")]
-    private float clickTolerance = 0.035f;
-
     [Header("Projection")]
     [SerializeField] private ProjectionMode projectionMode = ProjectionMode.AlongDirection;
     [SerializeField] private Vector3 projectionDirection = Vector3.down;
@@ -112,9 +107,10 @@ public sealed class DashedSurfaceLine : MonoBehaviour
         return true;
     }
 
-    public bool TryRemoveNearestDash(Vector3 worldPoint)
+    public bool TryRemoveNearestDash(Vector3 worldPoint, float maxDistance)
     {
-        float limitSquared = clickTolerance * clickTolerance;
+        float tolerance = Mathf.Max(0f, maxDistance);
+        float limitSquared = tolerance * tolerance;
         float closestSquared = limitSquared;
         int closestDash = -1;
 

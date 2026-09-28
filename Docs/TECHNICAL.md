@@ -4,7 +4,7 @@
 
 - `DashedSurfaceLine` (`Assets/Scripts`) owns collider-local control points, path projection, fixed-capacity mesh generation, and dash visibility.
 - `DashedSurfaceLineEditor` (`Assets/Editor`) provides Scene view point creation, selection, movement, projection previews, Undo support, and coordinate copy/paste.
-- `DashedLineClickRemover` raycasts from the demo camera and asks the line to hide the nearest dash within `Click Tolerance`.
+- `DashedLineClickRemover` on `Main Camera` owns mouse input, the surface raycast, and `Click Tolerance`. It asks the line to hide the nearest dash.
 
 ## Path construction
 
@@ -23,7 +23,22 @@ The mesh allocates `Dash Capacity × 4` vertices and `Dash Capacity × 2` triang
 
 The horse scene uses a front-facing normal check. A line on the far side of the model is therefore hidden even though the material draws above it. The single-sided quads use their fixed winding to disappear when viewed from behind.
 
-`TryRemoveNearestDash` searches the visible dash center segments. Once it finds a dash within `Click Tolerance`, it writes transparent alpha to that dash's four vertex colors. It does not rebuild the mesh or replace its triangles. A full rebuild is needed only when the path or line settings change.
+`TryRemoveNearestDash` searches the visible dash center segments. Once it finds a dash within the distance passed by the caller, it writes transparent alpha to that dash's four vertex colors. It does not rebuild the mesh or replace its triangles. A full rebuild is needed only when the path or line settings change.
+
+## Click-to-line call
+
+On a left mouse click, `DashedLineClickRemover.Update` creates a camera ray with `ScreenPointToRay(Input.mousePosition)`. `TryRemoveFromRay(Ray ray)` raycasts that ray against `surfaceCollider`. When the ray hits the model, it calls:
+
+```csharp
+bool removed = line.TryRemoveNearestDash(hit.point, clickTolerance);
+```
+
+- `line` is the referenced `DashedSurfaceLine` component.
+- `hit.point` (`Vector3`) is the surface hit position in **world coordinates**.
+- `clickTolerance` (`float`) is the maximum **world-space distance** from that position to a visible dash. It is serialized on `DashedLineClickRemover` (0.055 in the horse scene), not on `DashedSurfaceLine`.
+- The returned `bool` is `true` only when a visible dash was found within that distance and hidden.
+
+`DashedSurfaceLine.TryRemoveNearestDash(Vector3 worldPoint, float maxDistance)` can also be called by another input component without changing the line generator. It clamps a negative distance to zero and updates only the four vertex colors of the selected dash.
 
 ## Limits
 
