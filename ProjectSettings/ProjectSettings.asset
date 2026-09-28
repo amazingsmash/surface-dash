@@ -253,7 +253,7 @@ PlayerSettings:
   shaderPrecisionModel: 0
   clonedFromGUID: 0ea352821057f29478bc5a4fd7d4e8e1
   templatePackageId: com.unity.3d@1.0.1
-  templateDefaultScene: Assets/Scenes/SampleScene.unity
+  templateDefaultScene: Assets/Scenes/HorseSurfaceLine.unity
   useCustomMainManifest: 0
   useCustomLauncherManifest: 0
   useCustomMainGradleTemplate: 0

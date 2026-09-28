@@ -1,39 +1,30 @@
 # Surface Dash Lab
 
-A Unity 2022 project for authoring and rendering dashed lines on 3D colliders. Control points are placed in the Scene view, projected onto a collider, and converted into evenly spaced dashes at runtime.
+A Unity 2022 project for authoring and rendering dashed lines on a 3D collider. Control points are placed in the Scene view, projected onto the model, and converted into evenly spaced dashes at runtime.
 
-![Dashed line on the public sphere demo](Docs/images/sphere-surface-line.png)
+![Dashed line on the CC0 horse statue](Docs/images/horse-surface-line.png)
 
 ## Requirements
 
 - Unity **2022.3.62f3** (the version saved in `ProjectSettings/ProjectVersion.txt`).
 - The built-in render pipeline, which this project currently uses.
-- The CC0 horse model used by one demo is included in the repository.
+- The CC0 horse model is included in the repository.
 
 Open this directory as a project in Unity Hub. Unity will import the assets and the embedded `com.coplaydev.unity-mcp` package on first launch.
 
-## Demo scenes
+## Scene
 
-| Scene | Purpose |
-| --- | --- |
-| `Assets/Scenes/SphereSurfaceLine.unity` | Main 3D line demo. Edit control points on the sphere, then click a dash in Play mode to hide it. |
-| `Assets/Scenes/HorseSurfaceLine.unity` | Complex-mesh demo using a CC0 horse statue. Its red dashes follow the visible surface; click a dash in Play mode to hide it. |
-| `Assets/Scenes/DashedPlanePainting.unity` | Separate texture painting demo. Drag the mouse on the plane; press **C** to clear it. |
-| `Assets/Scenes/SphereEquator.unity` | Earlier sphere and equator material example. |
-
-`SphereSurfaceLine` is the first enabled build scene; `HorseSurfaceLine` is also enabled. `SampleScene` is an unused Unity template.
-
-![Dashed line on the CC0 horse statue](Docs/images/horse-surface-line.png)
+`Assets/Scenes/HorseSurfaceLine.unity` is the project's only scene and the only enabled build scene. The red dashes follow the CC0 horse statue's surface. Click a dash in Play mode to hide it.
 
 ## Build
 
 Open **File > Build Settings**, select **Windows, Mac, Linux**, and build the enabled scenes. The saved target is Windows 64-bit. A local Windows build has been checked successfully; build output is intentionally ignored by Git.
 
-Unity may warn that the project is not linked to Unity Services. The demos do not use Unity Services, so no project ID is required to run them.
+Unity may warn that the project is not linked to Unity Services. The scene does not use Unity Services, so no project ID is required to run it.
 
 ## Author a 3D dashed line
 
-1. Open `SphereSurfaceLine` and select **3D Dashed Line** in the Hierarchy.
+1. Open `HorseSurfaceLine` and select **3D Dashed Line** under **CC0 Horse Statue** in the Hierarchy.
 2. In its `Dashed Surface Line` inspector, assign the target collider if you are using another model.
 3. Click **Draw Points in Scene** and click the model, or click **Add 3D Point**. Use **Finish Drawing** when done.
 4. Select a yellow point handle to move it in 3D. The green marker shows where that point projects onto the collider. A red warning means it is outside the projection range.
@@ -51,10 +42,10 @@ See [Technical notes](Docs/TECHNICAL.md) for projection modes, rendering behavio
 
 ## MCP for Unity
 
-The project includes an embedded copy of [MCP for Unity](https://github.com/CoplayDev/unity-mcp) v10.0.0. The package is optional for running the demos. To connect an MCP client on another machine, open **Window > MCP for Unity** in the editor and follow the package's setup wizard. Its local server requires Python and `uv` or `uvx`; see the [upstream setup guide](https://github.com/CoplayDev/unity-mcp).
+The project includes an embedded copy of [MCP for Unity](https://github.com/CoplayDev/unity-mcp) v10.0.0. The package is optional for running the scene. To connect an MCP client on another machine, open **Window > MCP for Unity** in the editor and follow the package's setup wizard. Its local server requires Python and `uv` or `uvx`; see the [upstream setup guide](https://github.com/CoplayDev/unity-mcp).
 
 ## Repository contents and rights
 
-Unity's generated `Library`, `Temp`, `Logs`, `UserSettings`, IDE files, and captures are ignored by Git. The local Stanford Dragon model and the scene that depends on it are also excluded. The public complex-mesh scene uses the included CC0 [Horse Statue 01](https://polyhaven.com/a/horse_statue_01) by Rico Cilliers.
+Unity's generated `Library`, `Temp`, `Logs`, `UserSettings`, IDE files, and captures are ignored by Git. The scene uses the included CC0 [Horse Statue 01](https://polyhaven.com/a/horse_statue_01) by Rico Cilliers.
 
 The project-owned code and assets have **no public license yet**. The horse model and embedded MCP package keep their separate licenses. See [Third-party notices](Docs/THIRD_PARTY.md).

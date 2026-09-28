@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SphereSurfaceLine.unity
-    guid: c894a6f7e917b14439ebb984a4002a7a
-  - enabled: 1
-    path: Assets/Scenes/DashedPlanePainting.unity
-    guid: 45874109dcbb8e148baba30e3b289eef
-  - enabled: 1
-    path: Assets/Scenes/SphereEquator.unity
-    guid: 924d97f33c3ab284fa2b8ba2787636f2
-  - enabled: 1
     path: Assets/Scenes/HorseSurfaceLine.unity
     guid: b863c0daa8c74134091465e97af70263
   m_configObjects: {}

@@ -30,11 +30,3 @@
 *.unitypackage
 /coverage/
 /TestResults/
-
-# Local-only Stanford Dragon demo and its model
-/Assets/Models/StanfordDragon/
-/Assets/Models/StanfordDragon.meta
-/Assets/Scenes/DragonSurfaceLine.unity
-/Assets/Scenes/DragonSurfaceLine.unity.meta
-/Assets/Materials/DragonClay.mat
-/Assets/Materials/DragonClay.mat.meta
