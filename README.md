@@ -58,4 +58,4 @@ The project includes an embedded copy of [MCP for Unity](https://github.com/Copl
 
 Unity's generated `Library`, `Temp`, `Logs`, `UserSettings`, IDE files, and captures are ignored by Git. The scene uses the included CC0 [Horse Statue 01](https://polyhaven.com/a/horse_statue_01) by Rico Cilliers.
 
-The project-owned code and assets have **no public license yet**. The horse model and embedded MCP package keep their separate licenses. See [Third-party notices](Docs/THIRD_PARTY.md).
+Original SurfaceDash content is licensed under [Apache License 2.0](LICENSE). Redistributions must retain the attribution from [NOTICE](NOTICE) as required by that license. The horse model remains CC0 and the embedded MCP package remains MIT; see [Third-party notices](Docs/THIRD_PARTY.md).

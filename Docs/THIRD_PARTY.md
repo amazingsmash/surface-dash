@@ -10,4 +10,4 @@
 
 The downloads were verified against Poly Haven's published MD5 hashes: FBX `2f41dadad673af0bd0fa8aaa44ca4fd7`; diffuse JPG `a0aa4ddcc70e6223279cbbb4e031c1a6`.
 
-The project-owned code and assets do not currently have a public license. The MIT and CC0 licenses above apply only to their respective third-party assets.
+Original SurfaceDash content is licensed under Apache License 2.0 (see the root LICENSE and NOTICE). The embedded MCP package remains MIT, and the horse model and texture remain CC0; neither is relicensed by SurfaceDash.
