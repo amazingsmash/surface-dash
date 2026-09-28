@@ -2,7 +2,9 @@
 
 A Unity 2022 project for authoring and rendering dashed lines on a 3D collider. Control points are placed in the Scene view, projected onto the model, and converted into evenly spaced dashes at runtime.
 
-![Dashed line on the CC0 horse statue](Docs/images/horse-surface-line.png)
+[![Watch the SurfaceDash demo](Docs/images/horse-surface-line.png)](Docs/media/surface-dash-demo.mp4)
+
+[Watch the demo video (MP4)](Docs/media/surface-dash-demo.mp4)
 
 ## Requirements
 
