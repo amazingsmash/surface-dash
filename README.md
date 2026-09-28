@@ -1,4 +1,4 @@
-# Surface Dash Lab
+# Dash Line
 
 A Unity 2022 project for authoring and rendering dashed lines on a 3D collider. Control points are placed in the Scene view, projected onto the model, and converted into evenly spaced dashes at runtime.
 
