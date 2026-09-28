@@ -1,0 +1,40 @@
+# Unity-generated files
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]serSettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/[Cc]aptures/
+
+# IDE and generated solution files
+/.vs/
+/.vscode/
+/.idea/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.opendb
+*.VC.db
+
+# Local outputs and package exports
+*.log
+*.tmp
+*.unitypackage
+/coverage/
+/TestResults/
+
+# Local-only Stanford Dragon demo and its model
+/Assets/Models/
+/Assets/Models.meta
+/Assets/Scenes/DragonSurfaceLine.unity
+/Assets/Scenes/DragonSurfaceLine.unity.meta
+/Assets/Materials/DragonClay.mat
+/Assets/Materials/DragonClay.mat.meta
